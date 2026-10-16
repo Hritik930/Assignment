@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard layout using named grid areas.">
+  <title>Dashboard – Named Grid Areas</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #e9ecf3;
+    }
+
+    .dashboard {
+      display: grid;
+      min-height: 100vh;
+      grid-template-columns: 220px 1fr 1fr 1fr;
+      grid-template-rows: 64px auto 1fr 48px;
+      grid-template-areas:
+        "header  header  header  header"
+        "sidebar stat1   stat2   stat3"
+        "sidebar chart   chart   activity"
+        "footer  footer  footer  footer";
+      gap: 1rem;
+    }
+
+    .dashboard>* {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .header {
+      grid-area: header;
+      background: #1f2a44;
+      color: #fff;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background: #2b3a67;
+      color: #fff;
+      border-radius: 0 10px 10px 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      padding: .6rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .15);
+    }
+
+    .stat1 {
+      grid-area: stat1;
+    }
+
+    .stat2 {
+      grid-area: stat2;
+    }
+
+    .stat3 {
+      grid-area: stat3;
+    }
+
+    .chart {
+      grid-area: chart;
+    }
+
+    .activity {
+      grid-area: activity;
+    }
+
+    .footer {
+      grid-area: footer;
+      border-radius: 0;
+      text-align: center;
+      font-size: .85rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      color: #2b3a67;
+    }
+
+    .bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      height: 160px;
+      margin-top: 1rem;
+    }
+
+    .bars span {
+      flex: 1;
+      background: linear-gradient(#5c7cfa, #3b5bdb);
+      border-radius: 4px 4px 0 0;
+    }
+
+    .activity li {
+      margin: .5rem 0 .5rem 1rem;
+    }
+
+    @media (max-width: 800px) {
+      .dashboard {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "header header" "stat1 stat2" "stat3 stat3" "chart chart" "activity activity" "sidebar sidebar" "footer footer";
+      }
+
+      .sidebar {
+        border-radius: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dashboard">
+    <header class="header"><strong>Analytics</strong><span>Hello, Aarav</span></header>
+    <aside class="sidebar">
+      <ul>
+        <li>📊 Overview</li>
+        <li>👥 Users</li>
+        <li>💰 Sales</li>
+        <li>⚙️ Settings</li>
+      </ul>
+    </aside>
+    <section class="stat stat1"><span>Visitors</span><strong>12,480</strong></section>
+    <section class="stat stat2"><span>Orders</span><strong>842</strong></section>
+    <section class="stat stat3"><span>Revenue</span><strong>₹4.2L</strong></section>
+    <section class="chart">
+      <h2>Weekly Sales</h2>
+      <div class="bars" aria-hidden="true"><span style="height:40%"></span><span style="height:65%"></span><span
+          style="height:50%"></span><span style="height:85%"></span><span style="height:70%"></span><span
+          style="height:95%"></span><span style="height:60%"></span></div>
+    </section>
+    <section class="activity">
+      <h2>Activity</h2>
+      <ul>
+        <li>New order #842</li>
+        <li>User signed up</li>
+        <li>Refund processed</li>
+      </ul>
+    </section>
+    <footer class="footer">&copy; 2026 Analytics Inc.</footer>
+  </div>
+</body>
+
+</html>

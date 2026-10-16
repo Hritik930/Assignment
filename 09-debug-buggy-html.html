@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Debugged Page – HTML &amp; CSS course assignment">
+  <title>Debugged Page</title>
+</head>
+<body>
+  <!--
+  ORIGINAL BUGGY CODE (what was supplied):
+
+  <html>
+  <head>
+    <title>Buggy Page
+  </head>
+  <body>
+    <h1>My Hobbies<h2>
+    <p>I like <b>cricket and <i>music</b></i>.
+    <img src="photo.jpg">
+    <a href=google.com>Search</a>
+    <ul>
+      <li>Reading
+      <li>Coding
+    <ol>
+    <table>
+      <tr><td>Name<td>Age
+    </table>
+    <br/><p>Footer text</div>
+  </body>
+
+  BUGS FOUND AND FIXED (matching the code below):
+  1. Missing <!DOCTYPE html> and lang attribute.
+  2. Missing <meta charset>.
+  3. <title> was never closed.
+  4. <h1> closed with </h2> – tags must match.
+  5. Unclosed <p>.
+  6. Improperly nested <b> and <i> – close in reverse order.
+  7. <img> had no alt attribute.
+  8. href without quotes and without the https:// protocol.
+  9. <ul> never closed; stray <ol> opened instead.
+  10. <li> items not closed (valid but bad practice).
+  11. Table cells not closed and no <thead>/<th>.
+  12. </div> closing tag with no opening <div>.
+  -->
+
+  <h1>My Hobbies</h1>
+  <p>I like <b>cricket and <i>music</i></b>.</p>
+  <img src="photo.jpg" alt="Me playing cricket" width="200">
+  <p><a href="https://www.google.com">Search</a></p>
+
+  <ul>
+    <li>Reading</li>
+    <li>Coding</li>
+  </ul>
+
+  <table border="1">
+    <thead>
+      <tr><th>Name</th><th>Age</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Aarav</td><td>20</td></tr>
+    </tbody>
+  </table>
+
+  <p>Footer text</p>
+</body>
+</html>

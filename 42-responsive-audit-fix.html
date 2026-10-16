@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Responsiveness audit with fixes applied."
+    />
+    <title>Responsive Audit &amp; Fixes</title>
+    <!--
+  AUDIT RESULTS (before → after)
+  #  Issue found                                   Fix applied
+  1  No viewport meta → page zoomed out on phone   Added <meta name="viewport">
+  2  Fixed widths (width: 960px) → sideways scroll Replaced with max-width + width: 100%
+  3  Images overflowing their cards                img { max-width: 100%; height: auto }
+  4  Font sizes in px, tiny on phones              Used rem + clamp() for headings
+  5  Nav links overlapping on narrow screens       flex-wrap: wrap
+  6  Wide table broke layout                       Wrapped in overflow-x: auto container
+  7  Tap targets < 44px                            padding increased on links/buttons
+  8  3-column layout cramped on tablet             grid auto-fit + minmax()
+  -->
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        font-family: system-ui, sans-serif;
+        line-height: 1.6;
+        padding: 1rem;
+        background: #f4f6fb;
+      }
+      .container {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+      } /* fix 2 */
+      h1 {
+        font-size: clamp(1.6rem, 5vw, 2.8rem);
+        margin-bottom: 1rem;
+      } /* fix 4 */
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      } /* fix 5 */
+      nav a {
+        padding: 0.75rem 1rem;
+        background: #1f3a93;
+        color: #fff;
+        border-radius: 6px;
+        text-decoration: none;
+        min-height: 44px;
+      } /* fix 7 */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+      } /* fix 8 */
+      .card {
+        background: #fff;
+        padding: 1rem;
+        border-radius: 10px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+      } /* fix 3 */
+      .table-wrap {
+        overflow-x: auto;
+        margin-top: 1.5rem;
+        background: #fff;
+      } /* fix 6 */
+      table {
+        border-collapse: collapse;
+        min-width: 600px;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 0.6rem;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Responsive Audit – Fixed</h1>
+      <nav>
+        <a href="#">Home</a><a href="#">Services</a><a href="#">Pricing</a
+        ><a href="#">Blog</a><a href="#">Contact</a>
+      </nav>
+      <div class="grid">
+        <div class="card">
+          <img
+            src="https://picsum.photos/id/1011/800/500"
+            alt="Boat on a quiet lake"
+          />
+          <h2>Card one</h2>
+        </div>
+        <div class="card">
+          <img
+            src="https://picsum.photos/id/1015/800/500"
+            alt="Valley with a river"
+          />
+          <h2>Card two</h2>
+        </div>
+        <div class="card">
+          <img
+            src="https://picsum.photos/id/1016/800/500"
+            alt="Rocky canyon at dusk"
+          />
+          <h2>Card three</h2>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>Plan</th>
+            <th>Storage</th>
+            <th>Users</th>
+            <th>Support</th>
+            <th>Price</th>
+          </tr>
+          <tr>
+            <td>Basic</td>
+            <td>10 GB</td>
+            <td>1</td>
+            <td>Email</td>
+            <td>₹0</td>
+          </tr>
+          <tr>
+            <td>Pro</td>
+            <td>100 GB</td>
+            <td>5</td>
+            <td>Chat</td>
+            <td>₹499</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student registration form">
+  <title>Student Registration</title>
+</head>
+
+<body>
+  <h1>Student Registration Form</h1>
+  <form action="#" method="post">
+    <p>
+      <label for="name">Full name:</label>
+      <input type="text" id="name" name="name" required placeholder="Aarav Sharma">
+    </p>
+    <p>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </p>
+    <p>
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10 digits">
+    </p>
+    <p>
+      <label for="pass">Password:</label>
+      <input type="password" id="pass" name="password" minlength="8" required>
+    </p>
+    <fieldset>
+      <legend>Gender</legend>
+      <label><input type="radio" name="gender" value="male"> Male</label>
+      <label><input type="radio" name="gender" value="female"> Female</label>
+      <label><input type="radio" name="gender" value="other"> Other</label>
+    </fieldset>
+    <p>
+      <label for="course">Course:</label>
+      <select id="course" name="course" required>
+        <option value="">-- Select --</option>
+        <option>B.Tech CSE</option>
+        <option>BCA</option>
+        <option>B.Sc IT</option>
+      </select>
+    </p>
+    <p>
+      <label><input type="checkbox" name="terms" required> I agree to the terms and conditions</label>
+    </p>
+    <button type="submit">Register</button>
+    <button type="reset">Clear</button>
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finished CSS Grid project: a magazine-style portfolio layout.">
+  <title>Grid Project – Portfolio Magazine Layout</title>
+  <style>
+    :root {
+      --ink: #1a1a2e;
+      --paper: #fdfbf7;
+      --accent: #e94560;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    .layout {
+      display: grid;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-areas:
+        "head   head   head   head   head   head   head   head   head   head   head   head"
+        "hero   hero   hero   hero   hero   hero   hero   about  about  about  about  about"
+        "p1     p1     p1     p2     p2     p2     p3     p3     p3     p4     p4     p4"
+        "skills skills skills skills skills skills contact contact contact contact contact contact"
+        "foot   foot   foot   foot   foot   foot   foot   foot   foot   foot   foot   foot";
+    }
+
+    .head {
+      grid-area: head;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 3px double var(--ink);
+      padding-bottom: .75rem;
+    }
+
+    .head h1 {
+      font-size: 2.2rem;
+    }
+
+    .head nav a {
+      margin-left: 1rem;
+      color: var(--ink);
+    }
+
+    .hero {
+      grid-area: hero;
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      min-height: 320px;
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero h2 {
+      position: absolute;
+      left: 1.5rem;
+      bottom: 1.5rem;
+      color: #fff;
+      font-size: 2rem;
+      text-shadow: 0 2px 8px #000;
+    }
+
+    .about {
+      grid-area: about;
+      background: var(--ink);
+      color: #fff;
+      padding: 1.5rem;
+      border-radius: 6px;
+    }
+
+    .about h2 {
+      color: var(--accent);
+    }
+
+    .p1 {
+      grid-area: p1;
+    }
+
+    .p2 {
+      grid-area: p2;
+    }
+
+    .p3 {
+      grid-area: p3;
+    }
+
+    .p4 {
+      grid-area: p4;
+    }
+
+    .project {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .project h3 {
+      color: var(--accent);
+    }
+
+    .skills {
+      grid-area: skills;
+    }
+
+    .contact {
+      grid-area: contact;
+      background: #fff0f3;
+      padding: 1.5rem;
+      border-radius: 6px;
+    }
+
+    .skills ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .5rem;
+      list-style: none;
+      padding: 0;
+      margin-top: .5rem;
+    }
+
+    .skills li {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: .4rem;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .foot {
+      grid-area: foot;
+      text-align: center;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+      font-size: .85rem;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "head head" "hero hero" "about about" "p1 p2" "p3 p4" "skills skills" "contact contact" "foot foot";
+      }
+    }
+
+    @media (max-width: 520px) {
+      .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas: "head" "hero" "about" "p1" "p2" "p3" "p4" "skills" "contact" "foot";
+      }
+
+      .head {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <header class="head">
+      <h1>Aarav Sharma</h1>
+      <nav><a href="#">Work</a><a href="#">Skills</a><a href="#">Contact</a></nav>
+    </header>
+    <section class="hero"><img src="https://picsum.photos/id/1040/1000/600" alt="Old castle on a hill above a river">
+      <h2>Building the web, one grid at a time.</h2>
+    </section>
+    <section class="about">
+      <h2>About</h2>
+      <p>Front-end student passionate about layout, accessibility and clean code. This page is laid out entirely with
+        CSS Grid areas.</p>
+    </section>
+    <article class="project p1">
+      <h3>Resume Site</h3>
+      <p>Semantic HTML with a refined palette.</p>
+    </article>
+    <article class="project p2">
+      <h3>Login UI</h3>
+      <p>Centred Flexbox form.</p>
+    </article>
+    <article class="project p3">
+      <h3>Gallery</h3>
+      <p>Masonry-style Grid gallery.</p>
+    </article>
+    <article class="project p4">
+      <h3>Dashboard</h3>
+      <p>Named-area layout.</p>
+    </article>
+    <section class="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS Grid</li>
+        <li>Flexbox</li>
+        <li>Git</li>
+        <li>Responsive</li>
+        <li>A11y</li>
+      </ul>
+    </section>
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>📧 aarav@example.com<br>📍 Meerut, India</p>
+    </section>
+    <footer class="foot">&copy; 2026 Aarav Sharma</footer>
+  </div>
+</body>
+
+</html>

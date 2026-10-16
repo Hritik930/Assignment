@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Profile card and product card components.">
+  <title>Profile Card &amp; Product Card</title>
+  <style>
+    :root {
+      --primary: #5b4bdb;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #eef0f8;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 3rem 1rem;
+    }
+
+    /* ---------- PROFILE CARD ---------- */
+    .profile {
+      width: 300px;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .profile__cover {
+      height: 100px;
+      background: linear-gradient(120deg, var(--primary), #00b4d8);
+    }
+
+    .profile__avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      margin-top: -50px;
+      object-fit: cover;
+    }
+
+    .profile__body {
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .profile h2 {
+      margin: .5rem 0 0;
+    }
+
+    .profile p {
+      color: #666;
+      margin: .25rem 0 1rem;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid #eee;
+      padding-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .stats strong {
+      display: block;
+      font-size: 1.2rem;
+    }
+
+    .stats span {
+      font-size: .8rem;
+      color: #888;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: .6rem 1.6rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      background: #3f31b0;
+    }
+
+    /* ---------- PRODUCT CARD ---------- */
+    .product {
+      width: 300px;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+      overflow: hidden;
+      position: relative;
+      transition: transform .2s;
+    }
+
+    .product:hover {
+      transform: translateY(-6px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product__tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #e63946;
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 700;
+      padding: .25rem .7rem;
+      border-radius: 999px;
+    }
+
+    .product__body {
+      padding: 1.25rem;
+    }
+
+    .product h2 {
+      margin: 0 0 .25rem;
+      font-size: 1.2rem;
+    }
+
+    .rating {
+      color: #f4a100;
+      font-size: .9rem;
+    }
+
+    .price {
+      margin: .75rem 0;
+    }
+
+    .price strong {
+      font-size: 1.5rem;
+    }
+
+    .price s {
+      color: #999;
+      margin-left: .5rem;
+    }
+
+    .product .btn {
+      display: block;
+      text-align: center;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <article class="profile">
+    <div class="profile__cover"></div>
+    <img class="profile__avatar" src="https://picsum.photos/id/1005/200/200" alt="Portrait of Aarav Sharma">
+    <div class="profile__body">
+      <h2>Aarav Sharma</h2>
+      <p>Front-End Developer · Meerut</p>
+      <div class="stats">
+        <div><strong>45</strong><span>Projects</span></div>
+        <div><strong>1.2k</strong><span>Followers</span></div>
+        <div><strong>320</strong><span>Commits</span></div>
+      </div>
+      <a class="btn" href="#">Follow</a>
+    </div>
+  </article>
+
+  <article class="product">
+    <span class="product__tag">-30%</span>
+    <img src="https://picsum.photos/id/21/600/400" alt="Pair of white wireless headphones on a desk">
+    <div class="product__body">
+      <h2>Wireless Headphones</h2>
+      <div class="rating" aria-label="4 out of 5 stars">★★★★☆ <small>(214)</small></div>
+      <div class="price"><strong>₹2,799</strong><s>₹3,999</s></div>
+      <a class="btn" href="#">Add to cart</a>
+    </div>
+  </article>
+</body>
+
+</html>

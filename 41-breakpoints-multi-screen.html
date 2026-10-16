@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Earlier project (Assignment 25 style) upgraded with three breakpoints."
+    />
+    <title>Breakpoints Project</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        font-family: system-ui, sans-serif;
+        line-height: 1.6;
+        background: #f8f9fc;
+        color: #222;
+      }
+      header {
+        background: #1f3a93;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+      }
+      nav {
+        display: flex;
+        gap: 1.25rem;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+      }
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.25rem;
+      }
+      .card {
+        background: #fff;
+        padding: 1.25rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+      h1 {
+        font-size: 2.6rem;
+        margin-bottom: 1.5rem;
+      }
+      .badge {
+        display: inline-block;
+        margin-top: 1rem;
+        background: #ffe8cc;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+      }
+
+      /* ---- BREAKPOINT 1: tablets / small laptops (≤ 1024px) ---- */
+      @media (max-width: 1024px) {
+        .cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        h1 {
+          font-size: 2.2rem;
+        }
+      }
+      /* ---- BREAKPOINT 2: large phones (≤ 768px) ---- */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 0.5rem;
+          padding: 1rem;
+        }
+        main {
+          padding: 1.25rem;
+        }
+        h1 {
+          font-size: 1.9rem;
+        }
+      }
+      /* ---- BREAKPOINT 3: small phones (≤ 480px) ---- */
+      @media (max-width: 480px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        nav {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>Aarav's Site</strong>
+      <nav>
+        <a href="#">Home</a><a href="#">About</a><a href="#">Projects</a
+        ><a href="#">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Responsive Project</h1>
+      <section class="cards">
+        <article class="card">
+          <h2>Home</h2>
+          <p>Landing content.</p>
+        </article>
+        <article class="card">
+          <h2>About</h2>
+          <p>Student, developer.</p>
+        </article>
+        <article class="card">
+          <h2>Projects</h2>
+          <p>45 assignments.</p>
+        </article>
+        <article class="card">
+          <h2>Contact</h2>
+          <p>Say hello.</p>
+        </article>
+      </section>
+      <span class="badge">Layout: 4 cols → 2 cols → 1 col</span>
+
+      <h2 style="margin-top: 2rem">
+        Test log (Chrome DevTools → Toggle device toolbar, Ctrl+Shift+M)
+      </h2>
+      <table
+        border="1"
+        cellpadding="6"
+        style="border-collapse: collapse; background: #fff"
+      >
+        <tr>
+          <th>Device / width</th>
+          <th>Expected layout</th>
+          <th>Result</th>
+        </tr>
+        <tr>
+          <td>Desktop 1440px</td>
+          <td>4 columns</td>
+          <td>✔ Pass</td>
+        </tr>
+        <tr>
+          <td>iPad Air 820px</td>
+          <td>2 columns</td>
+          <td>✔ Pass</td>
+        </tr>
+        <tr>
+          <td>iPhone 14 390px</td>
+          <td>1 column, stacked header</td>
+          <td>✔ Pass</td>
+        </tr>
+        <tr>
+          <td>Galaxy Fold 280px</td>
+          <td>No horizontal scroll</td>
+          <td>✔ Pass</td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>

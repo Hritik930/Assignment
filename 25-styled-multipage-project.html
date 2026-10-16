@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Styled multi-page project with a design-choices note.">
+  <title>Styled Multi-Page Project</title>
+  <style>
+    :root {
+      --primary: #1f3a93;
+      --accent: #f4a261;
+      --bg: #f8f9fc;
+      --text: #222;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1rem;
+      padding-bottom: 2px;
+    }
+
+    nav a:hover {
+      border-bottom: 2px solid var(--accent);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    .page {
+      display: none;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    }
+
+    .page:target,
+    body:not(:has(.page:target)) #home {
+      display: block;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: .75rem;
+      font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+      display: block;
+      width: 100%;
+      padding: .5rem;
+      margin-top: .25rem;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font: inherit;
+    }
+
+    button {
+      background: var(--accent);
+      border: 0;
+      padding: .6rem 1.4rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      filter: brightness(.92);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: .5rem;
+    }
+
+    th {
+      background: #eef1fb;
+      text-align: left;
+    }
+
+    .note {
+      background: #fff8ec;
+      border-left: 5px solid var(--accent);
+      padding: 1rem;
+      margin-top: 1.5rem;
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Aarav's Site</h1>
+    <nav><a href="#home">Home</a><a href="#about">About</a><a href="#register">Register</a><a
+        href="#contact">Contact</a><a href="#design">Design Note</a></nav>
+  </header>
+  <main>
+    <section id="home" class="page">
+      <h2>Home</h2>
+      <p>Welcome to my styled multi-page project, upgraded from the plain HTML version in Assignment 20.</p>
+    </section>
+    <section id="about" class="page">
+      <h2>About</h2>
+      <table>
+        <tr>
+          <th>City</th>
+          <td>Meerut</td>
+        </tr>
+        <tr>
+          <th>Course</th>
+          <td>B.Tech CSE</td>
+        </tr>
+        <tr>
+          <th>Interests</th>
+          <td>Web, music, cricket</td>
+        </tr>
+      </table>
+    </section>
+    <section id="register" class="page">
+      <h2>Registration</h2>
+      <form action="#"><label>Name<input type="text" required></label><label>Email<input type="email" required></label>
+        <label>Course<select>
+            <option>B.Tech</option>
+            <option>BCA</option>
+          </select></label><button>Register</button>
+      </form>
+    </section>
+    <section id="contact" class="page">
+      <h2>Contact</h2>
+      <form action="#"><label>Name<input type="text"></label><label>Message<textarea
+            rows="4"></textarea></label><button>Send</button></form>
+    </section>
+    <section id="design" class="page">
+      <h2>Design Choices</h2>
+      <div class="note">
+        <p><strong>Colour:</strong> deep blue (trust, professionalism) with an orange accent only on actions so users
+          find buttons quickly.</p>
+        <p><strong>Typography:</strong> system font stack for fast loading; 1.6 line-height for readable paragraphs.</p>
+        <p><strong>Layout:</strong> content capped at 800px so lines stay comfortable to read; white cards on a
+          light-grey background create depth.</p>
+        <p><strong>Maintainability:</strong> colours live in CSS variables so the theme can change in one place.</p>
+      </div>
+    </section>
+  </main>
+  <footer><small>&copy; 2026 Aarav Sharma</small></footer>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finished Flexbox landing-page: nav, hero, features, testimonials and footer.">
+  <title>FitLife – Flexbox Landing Page</title>
+  <style>
+    :root {
+      --green: #2d6a4f;
+      --light: #d8f3dc;
+      --dark: #1b4332;
+      --accent: #ff9f1c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-block: 1rem;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--green);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .hero {
+      background: var(--light);
+    }
+
+    .hero .container {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding-block: 4rem;
+    }
+
+    .hero__text,
+    .hero__img {
+      flex: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      padding: .8rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .hero__img img {
+      width: 100%;
+      border-radius: 20px;
+      display: block;
+    }
+
+    .features {
+      padding-block: 4rem;
+      text-align: center;
+    }
+
+    .features h2 {
+      margin-bottom: 2rem;
+      color: var(--dark);
+    }
+
+    .features__list {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      flex: 1 1 260px;
+      background: #fff;
+      border: 1px solid #e3e3e3;
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+
+    .feature span {
+      font-size: 2.5rem;
+    }
+
+    .feature h3 {
+      margin: .5rem 0;
+    }
+
+    .testimonial {
+      background: var(--dark);
+      color: #fff;
+      padding-block: 3rem;
+    }
+
+    .testimonial .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .quote {
+      flex: 1 1 300px;
+      max-width: 450px;
+    }
+
+    .quote cite {
+      display: block;
+      margin-top: .5rem;
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-block: 1.5rem;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+
+      .hero .container {
+        flex-direction: column;
+        text-align: center;
+        padding-block: 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="container"><span class="logo">FitLife</span>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#">Join</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero__text">
+        <h1>Train smarter. Live stronger.</h1>
+        <p>Personalised workouts and meal plans that fit your schedule – wherever you are.</p>
+        <a class="btn" href="#">Start 7-day free trial</a>
+      </div>
+      <div class="hero__img"><img src="https://picsum.photos/id/1025/700/500" alt="A dog resting happily on a rug">
+      </div>
+    </div>
+  </header>
+
+  <section class="features" id="features">
+    <div class="container">
+      <h2>Everything you need</h2>
+      <div class="features__list">
+        <div class="feature"><span>🏋️</span>
+          <h3>Custom workouts</h3>
+          <p>Plans that adapt to your level and equipment.</p>
+        </div>
+        <div class="feature"><span>🥗</span>
+          <h3>Meal plans</h3>
+          <p>Simple recipes balanced for your goals.</p>
+        </div>
+        <div class="feature"><span>📈</span>
+          <h3>Progress tracking</h3>
+          <p>Charts and streaks that keep you motivated.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial" id="stories">
+    <div class="container">
+      <blockquote class="quote">“I lost 8 kg in three months and actually enjoyed it.” <cite>— Riya, Delhi</cite>
+      </blockquote>
+      <blockquote class="quote">“The best fitness app I've used – short, effective workouts.” <cite>— Kabir,
+          Meerut</cite></blockquote>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container"><span>&copy; 2026 FitLife</span><span>Privacy · Terms · Contact</span></div>
+  </footer>
+</body>
+
+</html>

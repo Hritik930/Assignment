@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Perfectly centred login form using Flexbox.">
+  <title>Centred Login Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      font-family: system-ui, sans-serif;
+      padding: 1rem;
+    }
+
+    .login {
+      width: 100%;
+      max-width: 380px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, .25);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .login h1 {
+      margin: 0;
+      text-align: center;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+      font-weight: 600;
+    }
+
+    .field input {
+      padding: .7rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font: inherit;
+    }
+
+    .field input:focus {
+      outline: 3px solid #c3b5ff;
+      border-color: #764ba2;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .9rem;
+    }
+
+    .row a {
+      color: #764ba2;
+    }
+
+    button {
+      padding: .8rem;
+      border: 0;
+      border-radius: 8px;
+      background: #764ba2;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #5d3a85;
+    }
+  </style>
+</head>
+
+<body>
+  <form class="login" action="#" method="post">
+    <h1>Welcome back</h1>
+    <label class="field">Email <input type="email" required placeholder="you@example.com"></label>
+    <label class="field">Password <input type="password" required minlength="8"></label>
+    <div class="row">
+      <label><input type="checkbox"> Remember me</label>
+      <a href="#">Forgot password?</a>
+    </div>
+    <button type="submit">Log in</button>
+  </form>
+</body>
+
+</html>

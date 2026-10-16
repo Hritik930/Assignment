@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demonstration of CSS selector types.">
+  <title>CSS Selector Types</title>
+  <style>
+    /* 1. Universal selector */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 2. Element (type) selector */
+    body {
+      font-family: system-ui, sans-serif;
+      background: #eef2f7;
+      color: #222;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      color: #1d3557;
+    }
+
+    p {
+      margin-bottom: .75rem;
+    }
+
+    /* 3. Class selector */
+    .card {
+      background: #fff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+    }
+
+    .highlight {
+      background: #ffe066;
+      padding: 0 .25rem;
+    }
+
+    /* 4. ID selector (unique element) */
+    #special {
+      border-left: 6px solid #e63946;
+    }
+
+    /* 5. Grouping selector */
+    h2,
+    h3 {
+      color: #457b9d;
+      margin-bottom: .5rem;
+    }
+
+    /* 6. Descendant selector */
+    .card a {
+      color: #e63946;
+    }
+
+    /* 7. Child selector */
+    ul>li {
+      margin-left: 1.5rem;
+    }
+
+    /* 8. Adjacent sibling selector */
+    h2+p {
+      font-weight: bold;
+    }
+
+    /* 9. Attribute selector */
+    a[target="_blank"]::after {
+      content: " ↗";
+    }
+
+    input[type="text"] {
+      padding: .4rem;
+      border: 1px solid #999;
+      border-radius: 4px;
+    }
+
+    /* 10. Pseudo-classes */
+    a:hover {
+      text-decoration: none;
+      background: #ffe066;
+    }
+
+    input:focus {
+      outline: 3px solid #a8dadc;
+    }
+
+    li:nth-child(odd) {
+      color: #1d3557;
+    }
+
+    /* 11. Pseudo-element */
+    p::first-line {
+      letter-spacing: .5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Selector Playground</h1>
+
+  <div class="card">
+    <h2>Class &amp; Element</h2>
+    <p>This bold line is styled by the <span class="highlight">adjacent sibling</span> selector.</p>
+    <p>This is a normal paragraph styled by the element selector.</p>
+  </div>
+
+  <div class="card" id="special">
+    <h3>ID selector</h3>
+    <p>Only one element on the page may own this id, giving it a red left border.</p>
+  </div>
+
+  <div class="card">
+    <h3>Descendant, child &amp; pseudo-class</h3>
+    <ul>
+      <li>Odd item (nth-child)</li>
+      <li>Even item</li>
+      <li>Odd item with <a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN (attribute
+          selector)</a></li>
+    </ul>
+    <p><input type="text" placeholder="Click me – :focus"></p>
+  </div>
+</body>
+
+</html>

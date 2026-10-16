@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Portfolio with Accessible Images – HTML &amp; CSS course assignment">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio with Accessible Images</title>
+</head>
+<body>
+  <header><h1>Aarav Sharma – Portfolio</h1></header>
+  <main>
+    <section>
+      <h2>Profile</h2>
+      <!-- Meaningful alt: describes content AND purpose -->
+      <img src="https://picsum.photos/id/1005/300/300" width="150" height="150"
+           alt="Portrait of Aarav, a smiling young man with short dark hair">
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <figure>
+        <img src="https://picsum.photos/id/180/400/250" width="400" height="250"
+             alt="Screenshot of the resume website showing a name header and skills list">
+        <figcaption>Resume website</figcaption>
+      </figure>
+      <figure>
+        <img src="https://picsum.photos/id/119/400/250" width="400" height="250"
+             alt="Screenshot of the student registration form with name, email and course fields">
+        <figcaption>Registration form</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Decorative image</h2>
+      <!-- Purely decorative images get an EMPTY alt so screen readers skip them -->
+      <img src="https://picsum.photos/id/1015/600/80" width="600" height="80" alt="">
+    </section>
+
+    <section>
+      <h2>Linked image</h2>
+      <a href="https://github.com/"><img src="https://picsum.photos/id/60/120/120" width="60" height="60" alt="Visit my GitHub profile"></a>
+    </section>
+  </main>
+
+  <!--
+  ALT TEXT CHECKLIST
+  ✔ Describe what the image shows and why it matters.
+  ✔ Don't start with "image of…" (screen readers announce it).
+  ✔ Linked images: describe the link destination.
+  ✔ Decorative images: alt="".
+  -->
+</body>
+</html>
