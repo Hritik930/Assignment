@@ -1,3 +1,11 @@
-# Assignment 1 – What happens between typing a URL and seeing the page?
+Assignment 1 – What Happens Between Typing a URL and Seeing the Page?
 
-When I type a URL into the browser and press Enter, the browser first checks its cache and then asks a DNS server to translate the domain name (e.g. `example.com`) into an IP address. It then opens a TCP connection to that server (and, for HTTPS, performs a TLS handshake to encrypt the traffic) and sends an HTTP request such as `GET /index.html`. The server processes the request and replies with a status code (e.g. 200 OK) and the HTML document. The browser parses the HTML into the DOM, discovers extra resources (CSS, JavaScript, images, fonts) and requests them too, builds the CSSOM from the CSS, combines both into a render tree, calculates layout, paints pixels to the screen, and finally runs JavaScript that may update the page further.
+When I type a website address in my browser and press Enter, the browser first finds the IP address of the website using DNS.
+
+Next, the browser connects to the website's server and sends a request for the webpage. The server receives the request and sends the webpage data back to the browser.
+
+The browser reads HTML, CSS, and JavaScript files. HTML creates the structure of the webpage, CSS adds style and design, and JavaScript makes the webpage interactive.
+
+Finally, the browser processes these files and displays the webpage on my screen.
+
+This is how a website loads when we enter a URL in a browser.
