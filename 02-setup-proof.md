@@ -17,6 +17,6 @@
 
 | Tool | Version | Installed correctly? |
 |------|---------|----------------------|
-| VS Code | _fill in_ | ✅ |
+| VS Code | 1.143.1 | ✅ |
 | Node.js | _fill in_ | ✅ |
 | Live Server | _fill in_ | ✅ |
